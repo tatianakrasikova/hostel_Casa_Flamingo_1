@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="create-foreign-key-cart-bed" author="LiubovK">
+
+        <addForeignKeyConstraint baseTableName="cart_bed"
+                                 baseColumnNames="cart_id"
+                                 constraintName="fk_cart_bed_to_cart"
+                                 referencedTableName="cart"
+                                 referencedColumnNames="id"
+        />
+
+        <addForeignKeyConstraint baseTableName="cart_bed"
+                                 baseColumnNames="bed_id"
+                                 constraintName="fk_cart_bed_to_bed"
+                                 referencedTableName="bed"
+                                 referencedColumnNames="id"
+        />
+
+    </changeSet>
+
+</databaseChangeLog>

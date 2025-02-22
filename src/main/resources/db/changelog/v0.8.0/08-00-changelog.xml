@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.29.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1738919290202-1" author="andre">
+        <createTable tableName="image">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_image"/>
+            </column>
+            <column name="s3path" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="file_origin_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="s3bucket_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="bed_id" type="BIGINT"/>
+            <column name="room_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1738919290202-2" author="andre">
+        <addForeignKeyConstraint baseColumnNames="bed_id" baseTableName="image" constraintName="FK_IMAGE_ON_BED"
+                                 referencedColumnNames="id" referencedTableName="bed"/>
+    </changeSet>
+    <changeSet id="1738919290202-3" author="andre">
+        <addForeignKeyConstraint baseColumnNames="room_id" baseTableName="image" constraintName="FK_IMAGE_ON_ROOM"
+                                 referencedColumnNames="id" referencedTableName="room"/>
+    </changeSet>
+
+</databaseChangeLog>

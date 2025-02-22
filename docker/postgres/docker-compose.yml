@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_container
+    environment:
+      - POSTGRES_USER=my_user
+      - POSTGRES_PASSWORD=pos1234
+      - POSTGRES_DB=hostel_Casa_Flamingo
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped

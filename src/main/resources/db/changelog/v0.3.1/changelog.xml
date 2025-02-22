@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+
+    <changeSet id="add-tag-0.3.1" author="LiubovK">
+        <tagDatabase tag="v0.3.1"/>
+    </changeSet>
+
+    <include file="drop-foreign-key-cart-bed-and-cart-room.xml" relativeToChangelogFile="true"/>
+    <include file="drop-table-cart-bed-and-cart-room.xml" relativeToChangelogFile="true"/>
+    <include file="drop-columns-cart-bed-id-and-room-id.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

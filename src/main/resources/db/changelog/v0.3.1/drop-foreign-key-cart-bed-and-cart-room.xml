@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="drop-foreign-key-cart-bed-and-cart-room" author="LiubovK">
+
+        <dropForeignKeyConstraint baseTableName="cart_bed" constraintName="fk_cart_bed_to_cart"/>
+        <dropForeignKeyConstraint baseTableName="cart_bed" constraintName="fk_cart_bed_to_bed"/>
+
+        <dropForeignKeyConstraint baseTableName="cart_room" constraintName="fk_cart_room_to_cart"/>
+        <dropForeignKeyConstraint baseTableName="cart_room" constraintName="fk_cart_room_to_room"/>
+
+    </changeSet>
+
+</databaseChangeLog>

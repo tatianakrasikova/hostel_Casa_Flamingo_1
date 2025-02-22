@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false
+    username: sa
+    password: sa
+
+  liquibase:
+    enabled: false
+
+  mail:
+    username: fake
+    password: fake
+    host: smtp.gmail.com
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          ssl:
+            protocols: TLSv1.2
+            trust: smtp.gmail.com
+
+base-url: http://localhost:8080/api
+
+s3:
+  endpoint: https://test.do.com
+  region: fra1
+  accessKey: fake
+  secretKey: fake
+  bucketName: fake
